@@ -1,0 +1,14 @@
+<div class="suggestions-list-container">
+  <h2>📚 Technology Suggestions</h2>
+
+  <div class="suggestions-grid">
+    <div *ngFor="let s of suggestions" class="suggestion-item">
+      <div class="suggestion-icon">💡</div>
+      <h3>{{ s.name }}</h3>
+      <p class="suggestion-desc">Learn more about {{ s.name }} technology</p>
+      <button [routerLink]="['/suggestions', s.id]" class="btn-details">
+        View Details →
+      </button>
+    </div>
+  </div>
+</div>

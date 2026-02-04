@@ -2,8 +2,9 @@ export interface Suggestion {
   id: number;
   title: string;
   description: string;
-  category: string;
+  author: string;
   date: Date;
-  status: string;   // ex: 'acceptee' | 'refusee' | 'en_attente'
+  category: string;
+  status: string;
   nbLikes: number;
 }

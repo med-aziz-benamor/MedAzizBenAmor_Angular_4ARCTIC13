@@ -1,0 +1,69 @@
+.suggestions-list-container {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions-list-container h2 {
+  color: #1e293b;
+  font-size: 1.8em;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.suggestion-item {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.suggestion-icon {
+  font-size: 3em;
+  margin-bottom: 1rem;
+}
+
+.suggestion-item h3 {
+  color: #1e293b;
+  font-size: 1.4em;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.suggestion-desc {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  font-size: 0.95em;
+}
+
+.btn-details {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}

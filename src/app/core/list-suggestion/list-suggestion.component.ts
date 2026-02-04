@@ -15,6 +15,7 @@ export class ListSuggestionComponent {
       id: 1,
       title: 'Organiser une journée team building',
       description: 'Suggestion pour organiser une journée de team building pour renforcer les liens entre les membres de l\'équipe.',
+      author: 'Jean Dupont',
       category: 'Événements',
       date: new Date('2025-01-20'),
       status: 'acceptee',
@@ -24,6 +25,7 @@ export class ListSuggestionComponent {
       id: 2,
       title: 'Améliorer le système de réservation',
       description: 'Proposition pour améliorer la gestion des réservations en ligne avec un système de confirmation automatique.',
+      author: 'Marie Martin',
       category: 'Technologie',
       date: new Date('2025-01-15'),
       status: 'refusee',
@@ -33,6 +35,7 @@ export class ListSuggestionComponent {
       id: 3,
       title: 'Créer un système de récompenses',
       description: 'Mise en place d\'un programme de récompenses pour motiver les employés et reconnaître leurs efforts.',
+      author: 'Pierre Bernard',
       category: 'Ressources Humaines',
       date: new Date('2025-01-25'),
       status: 'refusee',
@@ -42,6 +45,7 @@ export class ListSuggestionComponent {
       id: 4,
       title: 'Moderniser l\'interface utilisateur',
       description: 'Refonte complète de l\'interface utilisateur pour une meilleure expérience utilisateur.',
+      author: 'Sophie Petit',
       category: 'Technologie',
       date: new Date('2025-01-30'),
       status: 'en_attente',
@@ -57,6 +61,10 @@ export class ListSuggestionComponent {
       s.title.toLowerCase().includes(q) ||
       s.category.toLowerCase().includes(q)
     );
+  }
+
+  get refusedCount(): number {
+    return this.suggestions.filter(s => s.status === 'refusee').length;
   }
 
   like(s: Suggestion): void {

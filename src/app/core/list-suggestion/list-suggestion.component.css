@@ -1,0 +1,227 @@
+.suggestion-container {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.search-section {
+  margin-bottom: 2rem;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 20px 14px 45px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.suggestion-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.suggestion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.suggestion-card h3 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.suggestion-card p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.suggestion-meta {
+  font-size: 0.9em;
+  color: #64748b;
+  margin: 0.5rem 0;
+}
+
+.suggestion-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.suggestion-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-like {
+  background: #667eea;
+  color: white;
+}
+
+.btn-like:hover {
+  background: #5568d3;
+  transform: scale(1.05);
+}
+
+.btn-favorite {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-favorite:hover {
+  background: #d97706;
+  transform: scale(1.05);
+}
+
+.btn-remove-favorite {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-remove-favorite:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.status-acceptee {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-refusee {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-en_attente {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.category-badge {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.likes-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.favorites-section {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.favorites-section h2 {
+  color: #92400e;
+  margin-bottom: 1rem;
+}
+
+.favorites-list {
+  list-style: none;
+}
+
+.favorites-list li {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.favorites-list li:hover {
+  transform: translateX(5px);
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+}
+
+.no-results p {
+  font-size: 1.2em;
+  margin-top: 1rem;
+}
+
+.refused-count {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: 600;
+}

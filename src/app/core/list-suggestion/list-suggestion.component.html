@@ -1,65 +1,98 @@
-<div class="container">
+<div class="suggestion-container">
 
-  <h2 class="mt-3">Liste des suggestions</h2>
+  <h1>📝 Liste des Suggestions</h1>
 
-  <div class="mb-3">
-    <input
-      class="form-control"
-      type="text"
-      placeholder="Rechercher par titre ou catégorie..."
-      [(ngModel)]="searchText">
+  <div class="search-section">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        placeholder="Rechercher par titre ou catégorie..."
+        [(ngModel)]="searchText">
+    </div>
   </div>
 
-  <div *ngFor="let s of filteredSuggestions" class="card mb-3">
-    <div class="card-body">
+  <div *ngIf="filteredSuggestions.length === 0" class="no-results">
+    <p>😕 Aucune suggestion trouvée</p>
+  </div>
 
-      <h5 class="card-title">{{ s.title }}</h5>
-      <p class="card-text">{{ s.description }}</p>
+  <div class="suggestions-grid">
+    <div *ngFor="let s of filteredSuggestions" class="suggestion-card">
 
-      <p class="mb-2">
-        <strong>Catégorie:</strong> {{ s.category }} <br>
-        <strong>Date:</strong> {{ s.date | date:'longDate' }} <br>
-        <strong>Statut:</strong> {{ s.status }} <br>
-        <strong>Likes:</strong> {{ s.nbLikes }}
-      </p>
+      <span class="status-badge"
+            [ngClass]="{
+              'status-acceptee': s.status === 'acceptee',
+              'status-refusee': s.status === 'refusee',
+              'status-en_attente': s.status === 'en_attente'
+            }">
+        {{ s.status === 'acceptee' ? '✅ Acceptée' :
+           s.status === 'refusee' ? '❌ Refusée' :
+           '⏳ En attente' }}
+      </span>
 
-      <div class="d-flex gap-2">
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.description }}</p>
+
+      <div class="suggestion-meta">
+        <span class="category-badge">{{ s.category }}</span>
+      </div>
+
+      <div class="suggestion-meta">
+        <strong>👤 Auteur:</strong> {{ s.author }}<br>
+        <strong>📅 Date:</strong> {{ s.date | date:'dd/MM/yyyy' }}<br>
+        <span class="likes-count">💙 {{ s.nbLikes }} likes</span>
+      </div>
+
+      <div class="suggestion-actions">
         <button
-          class="btn btn-primary"
+          class="btn-like"
           *ngIf="!isRefused(s)"
-          (click)="like(s)">
+          (click)="like(s)"
+          title="Liker cette suggestion">
           👍 Like
         </button>
 
         <button
-          class="btn btn-warning"
+          class="btn-favorite"
           *ngIf="!isRefused(s)"
-          (click)="addToFavorites(s)">
-          ⭐ Ajouter aux favoris
+          (click)="addToFavorites(s)"
+          title="Ajouter aux favoris">
+          ⭐ Favoris
         </button>
 
-        <button class="btn btn-outline-secondary"
-                [disabled]="isRefused(s)">
-          Action (désactivée si refusée)
+        <button class="btn-remove-favorite"
+                *ngIf="isRefused(s)"
+                disabled
+                title="Cette suggestion a été refusée">
+          ❌ Refusée
         </button>
       </div>
 
     </div>
   </div>
 
-  <hr class="my-4">
-
-  <h4>Favoris ({{ favorites.length }})</h4>
-
-  <div *ngIf="favorites.length === 0" class="alert alert-info">
-    Aucune suggestion ajoutée aux favoris.
+  <div class="refused-count" *ngIf="refusedCount > 0">
+    ❌ Nombre de suggestions refusées: {{ refusedCount }}
   </div>
 
-  <ul *ngIf="favorites.length > 0" class="list-group">
-    <li *ngFor="let f of favorites" class="list-group-item d-flex justify-content-between align-items-center">
-      <span>{{ f.title }} <small class="text-muted">({{ f.category }})</small></span>
-      <button class="btn btn-sm btn-danger" (click)="removeFavorite(f)">Retirer</button>
-    </li>
-  </ul>
+  <div class="favorites-section" *ngIf="favorites.length > 0">
+    <h2>⭐ Mes Favoris ({{ favorites.length }})</h2>
+
+    <ul class="favorites-list">
+      <li *ngFor="let f of favorites">
+        <div>
+          <strong>{{ f.title }}</strong>
+          <small class="category-badge" style="margin-left: 0.5rem;">{{ f.category }}</small>
+        </div>
+        <button class="btn-remove-favorite" (click)="removeFavorite(f)">
+          🗑️ Retirer
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="favorites.length === 0" class="no-results">
+    <p>💫 Ajoutez des suggestions à vos favoris!</p>
+  </div>
 
 </div>

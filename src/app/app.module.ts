@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; // ✅ ADD
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { ListSuggestionComponent } from './core/list-suggestion/list-suggestion.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { ListSuggestionComponent } from './core/list-suggestion/list-suggestion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ListSuggestionComponent,
     HeaderComponent,
-    FooterComponent,
-    ListSuggestionComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    AppRoutingModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,79 @@
+.users-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.users-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.users-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.users-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.users-header p {
+  margin: 0;
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+.users-content {
+  padding: 3rem 2rem;
+}
+
+.coming-soon {
+  text-align: center;
+}
+
+.coming-soon .icon {
+  font-size: 5em;
+  margin-bottom: 1rem;
+}
+
+.coming-soon h2 {
+  color: #1e293b;
+  font-size: 2em;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.coming-soon p {
+  color: #64748b;
+  font-size: 1.1em;
+  margin-bottom: 2rem;
+}
+
+.features-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: #3730a3;
+  font-weight: 600;
+  border: 2px solid #c7d2fe;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
